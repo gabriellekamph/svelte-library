@@ -29,7 +29,7 @@
 </style>
 
 <main>
-	<h1>Svelte Library</h1>
+	<h1>Music Library</h1>
 	<Form />
 	<Library />
 </main>

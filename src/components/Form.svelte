@@ -34,12 +34,33 @@
 
 <style>
 
+    p {
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 15px;
+        width: 100%;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    input {
+        margin-right: 20px;
+    }
+
 </style>
 
 <form on:submit={onSubmit}>
-    <h3>Add new album</h3>
-    <label for="title">Title:</label><input type="text" id="title" bind:value={title} />
-    <label for="artist">Artist:</label><input type="text" id="artist" bind:value={artist} />
+    <h3>Add new album</h3><br />
+    <label for="title">Title: <input type="text" id="title" bind:value={title} /></label>
+    <label for="artist">Artist: <input type="text" id="artist" bind:value={artist} /></label>
     <br />
     <button>Save</button>
 </form>

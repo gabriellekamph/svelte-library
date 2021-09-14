@@ -6,16 +6,17 @@
 
 <style>
 
-    div {
+    .album-info {
         margin: 10px;
         padding: 10px;
-        max-width: 450px;
+        width: 300px;
         border: 1px solid #000;
     }
 
 </style>
 
-<div>
-    {album.title} <br/>
-    <b>{album.artist}</b> <br />
-</div>
+    <div class="album-info">
+        {album.title} <br/>
+        <b>{album.artist}</b> 
+    </div>
+

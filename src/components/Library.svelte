@@ -17,6 +17,11 @@
 </script>
 
 <style>
+    
+    div {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
 </style>
 
