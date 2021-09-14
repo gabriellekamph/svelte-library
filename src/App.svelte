@@ -1,8 +1,11 @@
 <script>
 
+	import Home from './components/Home.svelte';
 	import Library from './components/Library.svelte';
-	import Form from './components/Form.svelte';
-	
+	import { Router, Link, Route } from "svelte-routing";
+
+	export let url = "";
+
 </script>
 
 <style>
@@ -32,8 +35,21 @@
 
 </style>
 
-<main>
-	<h1>Music Library</h1>
-	<Form />
-	<Library />
-</main>
+<Router url="{url}">
+
+	<main>
+		<h1>Music Library</h1>
+
+		<nav>
+			<Link to="/">Home</Link>
+			<Link to="library">Library</Link>
+		</nav>
+	</main>
+
+	<div>
+	  <!-- <Route path="blog/:id" component="{BlogPost}" /> -->
+	  <Route path="/library" component="{Library}" />
+	  <Route path="/" component="{Home}" />
+	</div>
+	
+  </Router>
