@@ -2,28 +2,33 @@
   "albums": [
     {
       "id": 1,
-      "album": "The Resistance",
+      "title": "The Resistance",
       "artist": "Muse"
     },
     {
       "id": 2,
-      "album": "Du & jag döden",
+      "title": "Du & jag döden",
       "artist": "Kent"
     },
     {
       "id": 3,
-      "album": "My Beautiful Dark Twisted Fantasy",
+      "title": "My Beautiful Dark Twisted Fantasy",
       "artist": "Kanye West"
     },
     {
       "id": 4,
-      "album": "World Of Its Own",
+      "title": "World Of Its Own",
       "artist": "Tingsek"
     },
     {
       "id": 5,
-      "album": "Pretend",
+      "title": "Pretend",
       "artist": "Seinabo Sey"
+    },
+    {
+      "title": "tgrh",
+      "artist": "htrhtr",
+      "id": 6
     }
   ]
 }

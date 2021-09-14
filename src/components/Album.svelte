@@ -16,6 +16,6 @@
 </style>
 
 <div>
-    {album.album} <br/>
+    {album.title} <br/>
     <b>{album.artist}</b> <br />
 </div>

@@ -1,6 +1,7 @@
 <script>
 
 	import Library from './components/Library.svelte';
+	import Form from './components/Form.svelte';
 	
 </script>
 
@@ -29,5 +30,6 @@
 
 <main>
 	<h1>Svelte Library</h1>
+	<Form />
 	<Library />
 </main>
