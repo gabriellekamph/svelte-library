@@ -13,7 +13,8 @@
 
         let newAlbum = {
             "title": event.target.title.value,
-            "artist": event.target.artist.value
+            "artist": event.target.artist.value,
+            "image": "images/placeholder.jpg"
         }
 
         // Fetch with post to add new album to json database
