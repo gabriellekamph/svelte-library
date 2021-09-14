@@ -11,6 +11,9 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	h1 {
@@ -18,6 +21,7 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 200;
+		width: 100%;
 	}
 
 	@media (min-width: 640px) {

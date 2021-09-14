@@ -3,27 +3,32 @@
     {
       "id": 1,
       "title": "The Resistance",
-      "artist": "Muse"
+      "artist": "Muse",
+      "image": "images/muse.jpg"
     },
     {
       "id": 2,
       "title": "Du & jag döden",
-      "artist": "Kent"
+      "artist": "Kent",
+      "image": "images/kent.jpg"
     },
     {
       "id": 3,
       "title": "My Beautiful Dark Twisted Fantasy",
-      "artist": "Kanye West"
+      "artist": "Kanye West",
+      "image": "images/kanye-west.jpg"
     },
     {
       "id": 4,
       "title": "World Of Its Own",
-      "artist": "Tingsek"
+      "artist": "Tingsek",
+      "image": "images/tingsek.jpg"
     },
     {
       "id": 5,
       "title": "Pretend",
-      "artist": "Seinabo Sey"
+      "artist": "Seinabo Sey",
+      "image": "images/seinabo-sey.jpg"
     }
   ]
 }
