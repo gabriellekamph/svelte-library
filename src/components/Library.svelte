@@ -1,8 +1,9 @@
 <script>
 
     import { onMount } from 'svelte';
-    import Album from './Album.svelte';
+    import AlbumCard from './AlbumCard.svelte';
     import Form from './Form.svelte';
+    import { Link } from 'svelte-routing';
 
 
     export let library = [];
@@ -39,7 +40,10 @@
     </div>
 
     {#each library as album}
-    <Album {album} />
+
+    <Link to={`/library/${album.id}`} key={album.id}>
+    <AlbumCard {album} />
+    </Link>
     {:else}
     <div>Loading albums..</div>
     {/each}
