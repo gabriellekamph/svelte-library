@@ -17,23 +17,38 @@
     .album-card {
         margin: 10px;
         padding: 10px;
-        width: 300px;
-        border: 1px solid rgb(36, 100, 95);
+        width: 200px;
+        height: 230px;
+        border: 1px solid #ffc983;
         border-radius: 15px;
         text-align: center;
     }
 
     img {
-        width: 200px;
-        margin: 10px;
+        width: 100px;
+        margin: 0px;
+        border-radius: 15px;
     }
+
+    p {
+        font-size: 12px;
+        color: #000;
+        text-decoration: none;
+    }
+
+    p:hover {
+        color: #6d6e71;
+        text-decoration: none;
+    }
+
+
 </style>
 
 <div class="album-card">
     
-    <h3>{album.title} <br />
-        {album.artist} 
-    </h3>
+    <p>{album.title} <br />
+    <b>{album.artist}</b>
+    </p>
     <img src={album.image} alt="Album cover"/>
 
     <p class="status">{status}</p>

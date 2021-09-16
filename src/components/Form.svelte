@@ -13,7 +13,8 @@
         let newAlbum = {
             "title": event.target.title.value,
             "artist": event.target.artist.value,
-            "image": "images/placeholder.jpg"
+            "image": "images/placeholder.jpg",
+            "rented": false
         }
 
         // Fetch with post to add new album to json database
@@ -29,32 +30,48 @@
         .then(data => console.log("data", data))
         .catch(err => console.log("error", err))
 
+        alert("New album saved");
+        event.target.reset();
     }
 </script>
 
 <style>
-    h3 {
-        font-size: 15px;
-        width: 100%;
-    }
 
     form {
+        text-align: right;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        margin-bottom: 50px;
+        justify-content: flex-end;
     }
 
     input {
-        margin-right: 20px;
+        margin-left: 5px;
+        height: 25px;
+        border-radius: 8px;
+        margin-bottom: 5px;
     }
+
+    button {
+        height: 25px;
+        border-radius: 8px;
+        font-size: 12px;
+        padding-top: 2px;
+    }
+
+    .addNew {
+        width: 85%;
+        margin-bottom: 5px;
+    }
+
 </style>
 
 <form on:submit={onSubmit}>
-    <h3>Add new album</h3><br />
-    <label for="title">Title: <input type="text" id="title" bind:value={title} /></label>
-    <label for="artist">Artist: <input type="text" id="artist" bind:value={artist} /></label>
-    <br />
-    <button>Save</button>
+
+    <p class="addNew">Add album: 
+        <input type="text" id="title" bind:value={title} placeholder="Title" /> <br />
+        <input type="text" id="artist" bind:value={artist} placeholder="Artist" /> <br />
+        <button>Save</button>
+    </p>
+
+
 </form>

@@ -18,6 +18,7 @@
 
     div {
         margin-left: 40px;
+        text-align: center;
     }
 
     .rented {
@@ -28,17 +29,20 @@
         color: green;
     }
 
+    i {
+        font-size: 20px;
+        color: #ffc477;
+
+    }
+
 </style>
 
 <div>
-    <h3>Info about selected album</h3>
+    <h2>Info about selected album</h2>
     <p>
-        {thisAlbum.id} <br />
         {thisAlbum.title} <br />
         {thisAlbum.artist} <br />
     </p>
-
-    <!-- <img src={thisAlbum.image} alt="Album cover"/> -->
 
     <br /><br />
 
@@ -50,9 +54,9 @@
         <button on:click="{handleBorrowAlbum}" id={thisAlbum.id}>Return album</button>
     {/if}
 
-    <br />
+    <br /><br />
 
-    <Link to="/library">
+    <Link to="/">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
     </Link>
 </div>

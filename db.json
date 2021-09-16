@@ -12,13 +12,6 @@
       "artist": "Kent",
       "image": "images/kent.jpg",
       "id": 2,
-      "rented": true
-    },
-    {
-      "title": "My Beautiful Dark Twisted Fantasy",
-      "artist": "Kanye West",
-      "image": "images/kanye-west.jpg",
-      "id": 3,
       "rented": false
     },
     {
@@ -36,11 +29,25 @@
       "rented": false
     },
     {
-      "title": "Title",
-      "artist": "Artist",
-      "image": "images/placeholder.jpg",
+      "title": "Brothers in arms",
+      "artist": "Dire Straits",
+      "image": "images/dire-straits.jpg",
       "id": 6,
       "rented": false
+    },
+    {
+      "title": "Only by the Night",
+      "artist": "Kings of Leon",
+      "image": "images/kings-of-leon.jpg",
+      "id": 7,
+      "rented": false
+    },
+    {
+      "title": "",
+      "artist": "",
+      "image": "images/placeholder.jpg",
+      "rented": false,
+      "id": 8
     }
   ]
 }

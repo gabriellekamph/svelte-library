@@ -1,10 +1,12 @@
 <script>
 
-	import Home from './components/Home.svelte';
 	import Library from './components/Library.svelte';
-	import { Router, Link, Route } from "svelte-routing";
+	import { Router, Route } from "svelte-routing";
 	import AlbumDetails from './components/AlbumDetails.svelte';
 	import { beforeUpdate, afterUpdate, onMount } from 'svelte';
+	import Form from './components/Form.svelte';
+	
+	let record = 'images/record.png';
 
 	export let url = "";
 	export let library = [];
@@ -69,25 +71,29 @@
 			});
 		});
 	};
+
 </script>
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
+		margin-bottom: 50px;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-around;
+		align-items: center;
 	}
 
 	h1 {
-		color: rgb(36, 100, 95);
+		color: #6d6e71;
 		text-transform: uppercase;
-		font-size: 4em;
+		font-size: 5em;
 		font-weight: 200;
-		width: 100%;
+	}
+
+	img {
+		margin-right: 0px;
 	}
 
 	@media (min-width: 640px) {
@@ -95,29 +101,21 @@
 			max-width: none;
 		}
 	}
-
-	nav {
-		text-transform: uppercase;
-	}
-
 </style>
 
 <Router url="{url}">
 	<main>
+		<img src={record} width="150px" alt="" />
 		<h1>Music Library</h1>
-		<nav>
-			<Link to="/">Home</Link> | 
-			<Link to="library">Library</Link>
-		</nav>
+		<Form />
 	</main>
 
 	{#each library as album}
 		<div>
 			<Route path="/library/:id" let:params>
-			<AlbumDetails {library} {album} {params} {rented} />
+				<AlbumDetails {library} {album} {params} {rented} />
 			</Route>
-			<Route path="/library" component="{Library}" />
-			<Route path="/" component="{Home}" />
+			<Route path="/" component="{Library}" />
 	  	</div>
     {/each}
 </Router>
