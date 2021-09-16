@@ -1,5 +1,4 @@
 <script>
-
 </script>
 
 <style>
@@ -15,7 +14,6 @@
         width: 100%;
         margin: 20px;
     }
-
 </style>
 
 <div>

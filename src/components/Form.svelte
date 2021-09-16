@@ -1,5 +1,4 @@
 <script>
-
     export let title = "";
     export let artist = "";
 
@@ -34,7 +33,6 @@
 </script>
 
 <style>
-
     h3 {
         font-size: 15px;
         width: 100%;
@@ -51,7 +49,6 @@
     input {
         margin-right: 20px;
     }
-
 </style>
 
 <form on:submit={onSubmit}>

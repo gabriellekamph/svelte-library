@@ -2,10 +2,18 @@
 
     export let album = {};
 
+    let status;
+
+    if (album.rented === true) {
+        status = "Not available"
+
+    } else {
+        status = "Available"
+    }
+
 </script>
 
 <style>
-
     .album-card {
         margin: 10px;
         padding: 10px;
@@ -17,22 +25,18 @@
 
     img {
         width: 200px;
-        margin: 20px;
+        margin: 10px;
     }
-
-    .artist {
-        text-transform: uppercase;
-        margin-top: 5px;
-    }
-
 </style>
 
 <div class="album-card">
-
-    <h3>{album.title}</h3>
-    <p class="artist">{album.artist}</p> 
-
+    
+    <h3>{album.title} <br />
+        {album.artist} 
+    </h3>
     <img src={album.image} alt="Album cover"/>
+
+    <p class="status">{status}</p>
 
 </div>
 

@@ -5,7 +5,6 @@
     import Form from './Form.svelte';
     import { Link } from 'svelte-routing';
 
-
     export let library = [];
 
     onMount(() => (
@@ -19,7 +18,6 @@
 </script>
 
 <style>
-
     div {
         width: 100%;
         display: flex;
@@ -30,22 +28,18 @@
     .form {
         width: 100%;
     }
-
 </style>
 
 <div>
-
     <div class="form">
         <Form />
     </div>
 
     {#each library as album}
-
-    <Link to={`/library/${album.id}`} key={album.id}>
-    <AlbumCard {album} />
-    </Link>
+        <Link to={`/library/${album.id}`} key={album.id}>
+        <AlbumCard {album} />
+        </Link>
     {:else}
-    <div>Loading albums..</div>
+        <div>Loading albums..</div>
     {/each}
-
 </div>
