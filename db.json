@@ -26,7 +26,7 @@
       "artist": "Seinabo Sey",
       "image": "images/seinabo-sey.jpg",
       "id": 5,
-      "rented": false
+      "rented": true
     },
     {
       "title": "Brothers in arms",
@@ -43,11 +43,25 @@
       "rented": false
     },
     {
-      "title": "",
-      "artist": "",
+      "title": "Shallow Grave",
+      "artist": "The Tallest Man On Earth",
+      "image": "images/tallest-man.jpg",
+      "id": 8,
+      "rented": true
+    },
+    {
+      "title": "Pusselbitar",
+      "artist": "Timbuktu",
+      "image": "images/timbuktu.jpg",
+      "id": 9,
+      "rented": true
+    },
+    {
+      "title": "rgfetghy",
+      "artist": "gtrg",
       "image": "images/placeholder.jpg",
       "rented": false,
-      "id": 8
+      "id": 10
     }
   ]
 }

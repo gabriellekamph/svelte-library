@@ -10,6 +10,9 @@
 
 	export let url = "";
 	export let library = [];
+	export let title = "";
+    export let artist = "";
+	export let doUpdate = false;
 
 	let updateBorrowedStatus;
 	$: console.log(updateBorrowedStatus);
@@ -36,6 +39,40 @@
 	afterUpdate(() => {
 		updateBorrowedStatus = false;
 	});
+
+
+	const onSubmit = (event) => {
+        event.preventDefault();
+        console.log("Title: " + event.target.title.value)
+        console.log("Artist: " + event.target.artist.value)
+
+        let newAlbum = {
+            "title": event.target.title.value,
+            "artist": event.target.artist.value,
+            "image": "images/placeholder.jpg",
+            "rented": false
+        }
+
+        // Fetch with post to add new album to json database
+
+        fetch("http://localhost:3000/albums", {
+            method: "post",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(newAlbum)
+        })
+        .then(res => res.json())
+        .then(data => console.log("data", data))
+        .catch(err => console.log("error", err))
+
+		doUpdate = !doUpdate;
+		library = library;
+        event.target.reset();
+    }
+
+    $: console.log("Title: ", title)
+    $: console.log("Artist: ", artist)
 
 	const rented = (id) => {
 		let albumId = parseInt(id);
@@ -107,15 +144,19 @@
 	<main>
 		<img src={record} width="150px" alt="" />
 		<h1>Music Library</h1>
-		<Form />
+		{#key doUpdate}
+			<Form {onSubmit} />
+		{/key}
 	</main>
 
+	{#key doUpdate}
 	{#each library as album}
 		<div>
-			<Route path="/library/:id" let:params>
-				<AlbumDetails {library} {album} {params} {rented} />
-			</Route>
-			<Route path="/" component="{Library}" />
+				<Route path="/library/:id" let:params>
+					<AlbumDetails {library} {album} {params} {rented} />
+				</Route>
+				<Route exact path="/" component="{Library}" />
 	  	</div>
     {/each}
+	{/key}
 </Router>

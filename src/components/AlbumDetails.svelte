@@ -1,9 +1,9 @@
 <script>
-
     import { Link } from 'svelte-routing';
     export let params = {};
     export let library = {};
     export let rented;
+    let src;
 
     $: thisAlbum = library.find(a => a.id == params.id);
     $: console.log(thisAlbum);
@@ -12,10 +12,22 @@
         rented(e.target.id);
     };
 
+    // Fetch to get correct image
+
+    fetch('http://localhost:3000/albums')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            const getCorrectImg = data.map(function(pic) {
+                if (params.id == pic.id) {
+                    console.log(pic.id);
+                    src = `/${pic.image}`;
+                }
+            })
+        })
 </script>
 
 <style>
-
     div {
         margin-left: 40px;
         text-align: center;
@@ -35,16 +47,17 @@
 
     }
 
+    img {
+        margin: 20px;
+    }
 </style>
 
 <div>
-    <h2>Info about selected album</h2>
+    <h2>{thisAlbum.title}</h2>
     <p>
-        {thisAlbum.title} <br />
-        {thisAlbum.artist} <br />
+        <b>Artist: </b>{thisAlbum.artist} <br />
+        <img {src} alt="" width="250px" />
     </p>
-
-    <br /><br />
 
     {#if thisAlbum.rented === false}
         <p class="not-rented">Album available</p>
