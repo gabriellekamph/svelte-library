@@ -26,7 +26,7 @@
       "artist": "Seinabo Sey",
       "image": "images/seinabo-sey.jpg",
       "id": 5,
-      "rented": true
+      "rented": false
     },
     {
       "title": "Brothers in arms",
@@ -55,13 +55,6 @@
       "image": "images/timbuktu.jpg",
       "id": 9,
       "rented": true
-    },
-    {
-      "title": "rgfetghy",
-      "artist": "gtrg",
-      "image": "images/placeholder.jpg",
-      "rented": false,
-      "id": 10
     }
   ]
 }

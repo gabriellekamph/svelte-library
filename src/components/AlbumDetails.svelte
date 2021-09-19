@@ -50,6 +50,22 @@
     img {
         margin: 20px;
     }
+
+    .dot-green {
+        height: 10px;
+        width: 10px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .dot-red {
+        height: 10px;
+        width: 10px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 50%;
+        display: inline-block;
+    }
 </style>
 
 <div>
@@ -60,9 +76,11 @@
     </p>
 
     {#if thisAlbum.rented === false}
+        <span class="dot-green"></span>
         <p class="not-rented">Album available</p>
         <button on:click={handleBorrowAlbum} id={thisAlbum.id}>Borrow album</button>
     {:else}
+        <span class="dot-red"></span>
         <p class="rented">Album rented</p>
         <button on:click="{handleBorrowAlbum}" id={thisAlbum.id}>Return album</button>
     {/if}

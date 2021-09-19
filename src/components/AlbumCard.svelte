@@ -2,15 +2,6 @@
 
     export let album = {};
 
-    let status;
-
-    if (album.rented === true) {
-        status = "Not available"
-
-    } else {
-        status = "Available"
-    }
-
 </script>
 
 <style>
@@ -26,7 +17,7 @@
 
     img {
         width: 100px;
-        margin: 0px;
+        margin-bottom: 10px;
         border-radius: 15px;
     }
 
@@ -41,7 +32,21 @@
         text-decoration: none;
     }
 
+    .dot-green {
+        height: 10px;
+        width: 10px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+    }
 
+    .dot-red {
+        height: 10px;
+        width: 10px;
+        background-color: rgb(255, 0, 0);
+        border-radius: 50%;
+        display: inline-block;
+    }
 </style>
 
 <div class="album-card">
@@ -50,8 +55,13 @@
     <b>{album.artist}</b>
     </p>
     <img src={album.image} alt="Album cover"/>
+    <br />
 
-    <p class="status">{status}</p>
+    {#if album.rented === true}
+        <span class="dot-red"></span>
+    {:else}
+        <span class="dot-green"></span>
+    {/if}
 
 </div>
 
